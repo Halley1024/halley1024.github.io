@@ -1,9 +1,9 @@
 ---
 layout: post
-title: A Detailed Explanation of Rust Lifetimes
+title: Rust生命周期详解
 date: 2026-09-26 20:49 +0800
-categories: [Rust,Homepage]
-tags: [Rust]     # TAG names should always be lowercase
+categories: [Blogs,Rust]
+tags: [Blogs]     # TAG names should always be lowercase
 math: true
 mermaid: true
 ---
