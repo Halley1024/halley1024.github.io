@@ -154,7 +154,7 @@ async fn get_data() -> String {
 
 `Runtime`接收到了请求之后，会对顶层的`Task`进行`poll()`调用，然后底层`Future`状态机通过链式调用`poll()`直到最后一层`Future`，最后一层`Future`会检测阻塞操作是否已经完成，如：I/O请求、网络请求、`channel`通信等操作。如果没有完成，最后一层`Future`会注册`Waker::wake()`（当时间完成后触发），然后递归返回`Pending`状态，一直到`Runtime`接受到顶层`Future`的`Pending`信息。随后`Runtime`会将`Task` 暂时移出“正在执行”的状态。而不是一直循环。当操作完成之后，底层异步I/O系统找到`Task`对应的`Waker`执行`wake()`函数来通知`Runtime` `Task`任务可以继续了，于是`Runtime`又先调用顶层`Poll`，然后顶层`Future`状态机继续链式调用`Poll`，发现最后一层`Poll`成功返回，程序就加载断点继续执行。
 
-![](./../assets/posts/2026-09-27-rust-multi-thread/Rust异步机制.png)
+![Rust异步机制](../assets/posts/2026-09-27-rust-multi-thread/Rust异步机制.png)
 
 举个使用`Tokio`实现线程异步通信的例子。
 
