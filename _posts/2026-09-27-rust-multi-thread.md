@@ -5,7 +5,6 @@ date: 2026-09-27 22:30 +0800
 categories: [Blogs,Rust]
 tags: [Blogs]     # TAG names should always be lowercase
 math: true
-mermaid: true
 ---
 
 # Rust多线程编程
@@ -155,7 +154,7 @@ async fn get_data() -> String {
 
 `Runtime`接收到了请求之后，会对顶层的`Task`进行`poll()`调用，然后底层`Future`状态机通过链式调用`poll()`直到最后一层`Future`，最后一层`Future`会检测阻塞操作是否已经完成，如：I/O请求、网络请求、`channel`通信等操作。如果没有完成，最后一层`Future`会注册`Waker::wake()`（当时间完成后触发），然后递归返回`Pending`状态，一直到`Runtime`接受到顶层`Future`的`Pending`信息。随后`Runtime`会将`Task` 暂时移出“正在执行”的状态。而不是一直循环。当操作完成之后，底层异步I/O系统找到`Task`对应的`Waker`执行`wake()`函数来通知`Runtime` `Task`任务可以继续了，于是`Runtime`又先调用顶层`Poll`，然后顶层`Future`状态机继续链式调用`Poll`，发现最后一层`Poll`成功返回，程序就加载断点继续执行。
 
-![Rust异步机制](C:\Users\Halley\Documents\学习\程序员\Rust开发\asserts\Rust异步机制.png)
+![](./../assets/posts/2026-09-27-rust-multi-thread/Rust异步机制.png)
 
 举个使用`Tokio`实现线程异步通信的例子。
 
@@ -424,10 +423,3 @@ rust中支持`mpsc::sync_channel(0)`一条消息都不缓存。也就是“手�
 综上，`mpsc::sync_channel()`这种固定大小的消息队列方式，那边阻塞取决于生产者和消费者的速度，哪边快，阻塞哪一边。
 
 实际开发汇总，如果生产者速度可控，可以是用`channel`；反之，就需要使用`sync::channel`来设置一个安全上限，避免消息队列占据大量的内存空间。
-
-
-
-## 005 · 异步通信
-
-线程并发时，既能够通过rust提供的智能指针实现共享内存方式通信，也能rust标准库中提供``
-
