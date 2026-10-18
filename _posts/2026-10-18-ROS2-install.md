@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rust智能指针详解
+title: ROS2安装教程
 date: 2026-10-18 23:49 +0800
 categories: [Blogs,ROS2]
 tags: [Blogs]     # TAG names should always be lowercase
