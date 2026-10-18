@@ -147,6 +147,6 @@ ros2 run turtlesim turtle_teleop_key
 
 此时就会出现
 
-![image-20261018234024746](/home/halley/Documents/程序员技术/ROSA开发/turtle.png)
+![image-20261018234024746](../assets/posts/2026-10-18-ROS2/turtle.png)
 
 这样的一只小海龟，我们可以在控制终端，按下"上下左右"按键来控制这样的一只小海龟，这样就能控制其前进和后退以及旋转按钮。
