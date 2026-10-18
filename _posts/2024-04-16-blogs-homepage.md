@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Create my own homepage
+title: 创建个人博客
 date: 2024-04-16 11:04 +0800
 categories: [Blogs,Homepage]
 
@@ -15,15 +15,11 @@ mermaid: true
 1. 在jekyll theme网址:(http://jekyllthemes.org/) 中寻找自己想要的主题
 
    ![jekyll theme](../assets/posts/2024-04-16-blogs-homepage/1.png)
-
 2. 点击任意一款进入（示例）
 
    ![2](../assets/posts/2024-04-16-blogs-homepage/2.png)
 
-
    ![3](../assets/posts/2024-04-16-blogs-homepage/3.png)
-
-
 3. 点击Download
 
    下载完成后解压打开即可
@@ -54,31 +50,21 @@ mermaid: true
 1. 创建新的仓库
 
    ![4](../assets/posts/2024-04-16-blogs-homepage/4.png)
-
-
 2. 输入新仓库名称`GitHub的账户名.github.io`
 
    ![5](../assets/posts/2024-04-16-blogs-homepage/5.png)
-
-
-
 3. 创建好后，直接上传文件夹（这里我已经创建了，因此不演示了）
 4. 将该仓库作为自己的主页
 
    ![6](../assets/posts/2024-04-16-blogs-homepage/6.png)
-
 5. 设置
 
    ![7](../assets/posts/2024-04-16-blogs-homepage/7.png)
-
 6. 构建部署
 
    ![8](../assets/posts/2024-04-16-blogs-homepage/8.png)
-
-
 7. 效果
 
    ![9](../assets/posts/2024-04-16-blogs-homepage/9.png)
 
 个人主页:[https://halley1024.github.io](https://halley1024.github.io)
-
